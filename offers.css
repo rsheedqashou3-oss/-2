@@ -1,0 +1,610 @@
+/* ==========================================================================
+   إعدادات الخطوط والألوان العامة الموحدة لمتجر موسيقاتي
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f3e9dc; /* اللون البيج الفخم الموحد للخلفية */
+    color: #000000;
+}
+
+/* ==========================================================================
+   الهيدر العلوي الثابت والمطور (Header)
+   ========================================================================== */
+.main-header {
+    background-color: #ddcfb9; /* درجة البيج المتناسقة والفخمة */
+    border-top: 25px solid #8e6f54; /* الشريط البني العلوي العريض */
+    border-bottom: 2px solid #000000;
+    padding: 10px 4%;
+    position: relative;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+/* ضبط أزرار السلة والحساب (يمين الهيدر) */
+.user-actions {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    width: 20%;
+    justify-content: flex-start;
+}
+
+.account-btn, .cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* خانة البحث الدائرية في المنتصف */
+.search-container {
+    position: relative;
+    width: 50%;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 45px 10px 25px;
+    border-radius: 30px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    text-align: right;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* حاوية الشعار (يسار الهيدر) */
+.logo-container {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative; 
+}
+
+/* تنسيق الشعار العائم بحجمه الكبير المميز فوق القائمة تماماً */
+.main-logo {
+    height: 150px; 
+    object-fit: contain;
+    position: absolute;
+    top: -40px; 
+    right: -25px; 
+    z-index: 999; 
+}
+
+/* شريط القائمة والأزرار (Navbar) */
+.nav-bar {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* الزر البني المظلل للكبسة النشطة لصفحة العروض */
+.active-link {
+    background-color: #8e6f54;
+    color: #ffffff !important;
+    padding: 3px 20px;
+    border-radius: 15px;
+}
+
+/* ==========================================================================
+   العنوان الترحيبي لصفحة العروض
+   ========================================================================== */
+.offers-welcome-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #000000;
+    margin: 40px auto 10px auto;
+    padding: 0 4%;
+}
+
+/* ==========================================================================
+   شبكة كروت المنتجات وتكبير الكرت الأول (Grid Setup)
+   ========================================================================== */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 أعمدة متساوية لتدعم تمدد الكرت */
+    gap: 25px;
+    padding: 30px 4%;
+}
+
+/* كرت المنتج الفاخر الموحد */
+.product-card {
+    background-color: #ffffff;
+    border: 2px solid #8e6f54; /* الإطار البني الأنيق الفاصل والمحدد */
+    border-radius: 20px;
+    padding: 40px 20px 20px 20px; /* حشوة علوية واقية لتفادي تداخل شارة الخصم */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: right;
+}
+
+/* 🛠️ هندسة الكرت الكبير الجديد والمطور ليتطابق مع صور الفيجما بدقة 🛠️ */
+.product-card.super-card {
+    grid-column: span 2; /* يمتد على عمودين ليصبح عريضاً وأفقياً */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* الحاوية الداخلية تجمع الصورة والمعلومات أفقياً وباتجاه صحيح */
+.super-card-body {
+    display: flex;
+    flex-direction: row-reverse; /* الصورة على اليمين والمعلومات والأسعار على اليسار */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* صندوق محاذاة وحجم الصورة الكبيرة للباقة المتكاملة */
+.super-product-img-box {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.super-product-img-box img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+/* صندوق تفاصيل المنتج (الاسم والأسعار مرتبة عمودياً باليسار) */
+.super-product-info-box {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    padding-left: 10px;
+}
+
+/* ضبط حجم وعرض خط عنوان الباقة المميزة */
+.super-product-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* ترتيب مصفوفة الأسعار تحت العنوان مباشرة وعمودياً */
+.super-price-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.super-product-price {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000000;
+}
+
+.super-old-price {
+    font-size: 16px;
+    color: #555555;
+    text-decoration: line-through;
+    font-weight: 700;
+}
+
+/* زر السلة السفلي العريض والمستقل تماماً أسفل الكرت المميز */
+.super-add-to-cart-btn {
+    background-color: #ddcfb9;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    transition: background-color 0.2s ease;
+}
+
+.super-add-to-cart-btn:hover {
+    background-color: #ccbeaa;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* حاوية العناوين والأسعار العادية للكروت الأخرى */
+.product-title-price-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* حاوية الصورة المتمركزة في منتصف الكروت العادية */
+.product-img-box {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 20px 0;
+    width: 100%;
+}
+
+.product-img-box img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* شارة الخصم النارية الحمراء الفاخرة */
+.discount-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #ff0000; 
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* منطقة تجمع السعر القديم والجديد للكروت العادية */
+.price-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.product-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* السعر القديم مع خط الشطب للمصداقية */
+.old-price {
+    font-size: 14px;
+    color: #555555;
+    text-decoration: line-through;
+    font-weight: 700;
+}
+
+/* زر إضافة إلى السلة السفلي الفاخر للكروت العادية */
+.add-to-cart-btn {
+    background-color: #ddcfb9;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: auto; 
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #ccbeaa;
+}
+
+/* الأيقونة الدائرية البيضاء داخل زر السلة */
+.btn-cart-icon {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   الفوتر السفلي المطور والمغلق بالإطار بالكامل (Footer)
+   ========================================================================== */
+.main-footer {
+    background-color: #ddcfb9;
+    border: 2px solid #000000; 
+    margin: 40px 4% 20px 4%; 
+    padding: 0;
+    border-radius: 4px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+}
+
+/* قسم المتابعة (الجهة اليسرى) */
+.follow-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 25px 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    color: #000000;
+    font-size: 38px;
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* نص الحقوق المتموضع بذكاء أسفل اليسار بالتوازي مع الخط السفلي */
+.copyright-text {
+    font-size: 18px;
+    font-weight: 900;
+    color: #000000;
+    margin-top: auto;
+}
+
+/* قسم التواصل (الجهة اليمنى) مع خط فاصل أسود رأسي دقيق */
+.contact-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 25px 40px;
+    border-left: 2px solid #000000; 
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contact-item i {
+    font-size: 22px;
+    width: 25px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Responsive الشاشات المختلفة والتجاوب الذكي للموبايل والتابلت المطور الموحد
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .products-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .products-container { grid-template-columns: repeat(2, 1fr); }
+    .product-card.super-card { grid-column: span 2; } 
+}
+
+@media (max-width: 768px) {
+    /* تجاوب الهيدر لمنع تداخل الشعار والقوائم */
+    .top-bar { 
+        flex-direction: column; 
+        gap: 20px; 
+        align-items: center;
+        width: 100%;
+    }
+    
+    .logo-container { 
+        width: 100%; 
+        justify-content: center; 
+        height: auto;
+        margin-top: 15px;
+    }
+    
+    /* إنزال الشعار لمنتصف الصفحة هيدر التلفون */
+    .main-logo { 
+        position: static; 
+        height: 100px; 
+        margin: 0 auto;
+    }
+    
+    .search-container { 
+        width: 100%; 
+        order: 2;
+    }
+    
+    .user-actions { 
+        width: 100%; 
+        justify-content: center; 
+        order: 3;
+        gap: 35px;
+    }
+
+    .nav-bar { 
+        justify-content: center; 
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav-bar ul { 
+        flex-wrap: wrap;
+        justify-content: center; 
+        gap: 15px 25px; 
+    }
+
+    /* العنوان الترحيبي لصفحة العروض */
+    .offers-welcome-title {
+        font-size: 24px;
+        margin: 25px auto 5px auto;
+    }
+
+    /* كروت المنتجات العادية: عرض كرتين بجانب بعضهما متناسقين جداً */
+    .products-container { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+        padding: 20px 4%;
+    }
+
+    /* 🛠️ تفاصيل تجاوب الـ Super Card عند التحول للموبايل (تحويل عمودي مريح بصرياً) */
+    .product-card.super-card { 
+        grid-column: span 2; /* يمتد ليشغل العرض الكامل للسطر بالهاتف ليعطيه أهمية وفخامة */
+        padding: 15px;
+    }
+    
+    .super-card-body {
+        flex-direction: column; /* قلب العناصر لتصبح تحت بعضها بدلاً من التراص الأفقي المضغوط */
+        align-items: center;
+        margin-bottom: 15px;
+        gap: 15px;
+    }
+    
+    .super-product-img-box {
+        width: 100%;
+    }
+    
+    .super-product-img-box img {
+        max-height: 140px;
+    }
+
+    .super-product-info-box {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        margin-top: 5px;
+    }
+    
+    .super-product-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .super-price-wrapper {
+        align-items: center;
+    }
+    
+    .super-product-price {
+        font-size: 17px;
+    }
+    
+    .super-old-price {
+        font-size: 14px;
+    }
+
+    .super-add-to-cart-btn {
+        margin-top: 10px;
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    /* تجاوب الفوتر وتحويل الأقسام عمودياً */
+    .footer-container { 
+        flex-direction: column; 
+    }
+    
+    .contact-section { 
+        border-left: none; 
+        border-bottom: 2px solid #000000; 
+        width: 100%; 
+        align-items: center; 
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .follow-section { 
+        width: 100%; 
+        align-items: center; 
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* للهواتف الضيقة جداً: الكروت العادية تأخذ السطر بالكامل لمنع صغر حجم الخطوط والكتابة */
+    .products-container { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .product-card.super-card { 
+        grid-column: span 1; 
+    }
+}

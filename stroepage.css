@@ -1,0 +1,416 @@
+/* --- إعدادات الخطوط والألوان العامة --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f3e9dc; /* اللون البيج الفخم الموحد للخلفية */
+    color: #000000;
+}
+
+/* --- الهيدر (Header) --- */
+.main-header {
+    background-color: #ddcfb9; /* تعديل درجة البيج لتطابق الصورة الفخمة */
+    border-top: 25px solid #8e6f54; /* اللون البني الجديد للأشرطة */
+    border-bottom: 2px solid #000000;
+    padding: 10px 4% 10px 4%;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+/* ضبط حاوية الشعار لتصبح نقطة ارتكاز */
+.logo-container {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative; 
+}
+
+/* تعديل الشعار ليطفو بحجم كبير وثابت دون التأثير على الهيدر */
+.main-logo {
+    height: 150px; 
+    object-fit: contain;
+    position: absolute;
+    top: -40px; 
+    right: -25px; /* تم ضبط الإزاحة لليسار ليتوسط فوق القائمة تماماً ويتناسق */
+    z-index: 999; 
+}
+
+/* خانة البحث الدائرية */
+.search-container {
+    position: relative;
+    width: 50%;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 45px 10px 25px;
+    border-radius: 30px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    text-align: right;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* الحساب والسلة على اليمين */
+.user-actions {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    width: 20%;
+    justify-content: flex-start;
+}
+
+.account-btn, .cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* شريط التنقل (Navbar) */
+.nav-bar {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* الزر البني النشط لـ (المتجر) بالدرجة الفخمة الجديدة */
+.active-link {
+    background-color: #8e6f54;
+    color: #ffffff !important;
+    padding: 3px 20px;
+    border-radius: 15px;
+}
+
+/* --- شبكة المنتجات وتصميم الكروت الجديد --- */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 40px 4%;
+}
+
+/* كرت المنتج المحدث حسب تصميم الفخامة */
+.product-card {
+    background-color: #ffffff;
+    border: 2px solid #8e6f54; /* سمك وحدود بنية متناسقة تفصل الكروت بوضوح */
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: right;
+}
+
+/* عنوان المنتج في الأعلى يمين */
+.product-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+/* السعر أسفل العنوان مباشرة */
+.product-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* حاوية الصورة المتمركزة في الوسط */
+.product-img-box {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.product-img-box img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* زر إضافة إلى السلة السفلي المحدث بالتصميم الفاخر المتناسق مع الألوان الجديدة */
+.add-to-cart-btn {
+    background-color: #ddcfb9;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: auto; 
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #ccbeaa;
+}
+
+/* الأيقونة الدائرية داخل الزر */
+.btn-cart-icon {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* --- قسم الفيديو الجديد الترويجي --- */
+.promo-video-section {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.promo-video-section video {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #8e6f54;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background-color: #000;
+}
+
+/* --- الفوتر السفلي المطور بالخطوط المغلقة والتوزيع الاحترافي (Footer) --- */
+.main-footer {
+    background-color: #ddcfb9; /* نفس درجة الهيدر للفخامة والتناسق */
+    border: 2px solid #000000; /* إغلاق الإطار الخارجي كاملاً باللون الأسود */
+    margin: 40px 4% 20px 4%; /* ترك هوامش جانبية ليظهر كصندوق مغلق وجميل */
+    padding: 0;
+    border-radius: 4px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* لتمتد الخطوط الفاصلة الداخلية من الأعلى للأسفل تماماً */
+}
+
+/* قسم المتابعة (الجهة اليسرى) */
+.follow-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 25px 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px; /* مسافة قبل نص الحقوق */
+}
+
+.social-icons a {
+    color: #000000;
+    font-size: 38px;
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* نص الحقوق الجديد المتموضع بذكاء أسفل السوشيال ميديا جهة اليسار */
+.copyright-text {
+    font-size: 18px;
+    font-weight: 900;
+    color: #000000;
+    margin-top: auto; /* ليدفعه ليكون دائماً ملاصقاً للخط السفلي بدقة */
+}
+
+/* قسم التواصل (الجهة اليمنى) مع خط فاصل أسود من اليسار */
+.contact-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 25px 40px;
+    border-left: 2px solid #000000; /* الخط الفاصل العمودي المغلق تماماً والممتد بالمنتصف */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contact-item i {
+    font-size: 22px;
+    width: 25px;
+    text-align: center;
+}
+
+/* --- Responsive الشاشات المختلفة الاحترافي الموحد --- */
+@media (max-width: 1100px) {
+    .products-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    /* تجاوب الهيدر لمنع تداخل الشعار والقوائم */
+    .top-bar { 
+        flex-direction: column; 
+        gap: 20px; 
+        align-items: center;
+        width: 100%;
+    }
+    
+    .logo-container { 
+        width: 100%; 
+        justify-content: center; 
+        height: auto;
+        margin-top: 15px;
+    }
+    
+    /* إلغاء الوضع المطلق والعائم للشعار ليتمركز بوسط الشاشة */
+    .main-logo { 
+        position: static; 
+        height: 100px; /* حجم مثالي ومناسب لشاشات التلفون */
+        margin: 0 auto;
+    }
+    
+    .search-container { 
+        width: 100%; 
+        order: 2; /* وضع البحث مباشرة تحت اللوجو */
+    }
+    
+    .user-actions { 
+        width: 100%; 
+        justify-content: center; 
+        order: 3; /* الحساب والسلة تحت صندوق البحث */
+        gap: 35px;
+    }
+
+    .nav-bar { 
+        justify-content: center; 
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav-bar ul { 
+        flex-wrap: wrap; /* نزول تلقائي منسق لخيارات القائمة في سطر جديد دون تداخل */
+        justify-content: center; 
+        gap: 15px 25px; 
+    }
+
+    /* كروت المنتجات: عرض كرتين متناسقين جنباً إلى جنب */
+    .products-container { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+        padding: 20px 4%;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .product-title {
+        font-size: 14px;
+    }
+    
+    .product-img-box {
+        height: 120px;
+    }
+
+    /* تجاوب الفوتر وتحويل الأقسام عمودياً */
+    .footer-container { 
+        flex-direction: column; 
+    }
+    
+    .contact-section { 
+        border-left: none; 
+        border-bottom: 2px solid #000000; 
+        width: 100%; 
+        align-items: center; 
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .follow-section { 
+        width: 100%; 
+        align-items: center; 
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* التلفونات الصغيرة جداً: عرض منتج واحد كامل لكل سطر لمنع صغر حجم العناصر */
+    .products-container { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
